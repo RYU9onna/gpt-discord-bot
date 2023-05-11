@@ -13,7 +13,7 @@ def moderate_message(
     message: str, user: str
 ) -> Tuple[str, str]:  # [flagged_str, blocked_str]
     moderation_response = openai.Moderation.create(
-        input=message, model="text-moderation-latest"
+        input=message, model="gpt-4"
     )
     category_scores = moderation_response.results[0]["category_scores"] or {}
 
